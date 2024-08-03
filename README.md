@@ -5,3 +5,4 @@ Nguyễn Văn Thịnh - 2100002891 Câu1
 Nguyễn Minh Hoàng - 2100003284 Câu2
 Nguyễn Tấn Nhã - 2100005929 Câu1
 Lương Ngọc Thiện - 2100011852 Câu2
+Câu 3
