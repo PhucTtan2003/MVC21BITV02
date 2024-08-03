@@ -1,0 +1,36 @@
+﻿@model IEnumerable<HangHoa>
+
+@{
+    ViewData["Title"] = "Chi Tiết Đơn Hàng";
+}
+
+<h1>Chi Tiết Đơn Hàng</h1>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Mã HH</th>
+            <th>Tên Hàng Hóa</th>
+            <th>Mô Tả Đơn Vị</th>
+            <th>Số Lượng</th>
+            <th>Đơn Giá</th>
+            <th>Thành Tiền</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MaHH</td>
+                <td>@item.TenHH</td>
+                <td>@item.MoTaDonVi</td>
+                <td>@item.SoLuong</td>
+                <td>@item.DonGia.ToString("C")</td>
+                <td>@item.ThanhTien.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Index" class="btn btn-primary">Back to Orders</a>
+
