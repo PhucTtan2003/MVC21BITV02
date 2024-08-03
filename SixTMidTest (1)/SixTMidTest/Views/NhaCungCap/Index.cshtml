@@ -1,0 +1,171 @@
+﻿@model IEnumerable<SixTMidTest.Data.NhaCungCap>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Quản Lý Nhà Cung Cấp</h1>
+
+<p>
+    <a asp-action="CreateNCC" class="btn btn-success">Create New</a>
+</p>
+<table class="table table-hover table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TenCongTy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Logo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NguoiLienLac)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DienThoai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiaChi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoTa)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenCongTy)
+                </td>
+                <td>
+                    <img src="~/Hinh/NhaCC/@item.Logo" alt="@item.TenCongTy" height="50" width="50" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NguoiLienLac)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DienThoai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiaChi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoTa)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.MaNcc" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.MaNcc" class="btn btn-info btn-sm">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.MaNcc" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        margin: 5px 0;
+    }
+
+    .table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+        background-color: white;
+    }
+
+        .table thead th {
+            background-color: #4CAF50;
+            color: white;
+            text-align: left;
+            padding: 10px;
+        }
+
+        .table tbody td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .table img {
+            border-radius: 5px;
+        }
+
+    .btn-sm {
+        padding: 5px 10px;
+        font-size: 0.875rem;
+        border-radius: 3px;
+    }
+
+    .btn-warning {
+        background-color: #ffa500;
+        color: white;
+        border: none;
+    }
+
+        .btn-warning:hover {
+            background-color: #cc8400;
+        }
+
+    .btn-info {
+        background-color: #17a2b8;
+        color: white;
+        border: none;
+    }
+
+        .btn-info:hover {
+            background-color: #138496;
+        }
+
+    .btn-danger {
+        background-color: #ff0000;
+        color: white;
+        border: none;
+    }
+
+        .btn-danger:hover {
+            background-color: #cc0000;
+        }
+
+    .btn-success {
+        background-color: #28a745;
+        color: white;
+        border: none;
+    }
+
+        .btn-success:hover {
+            background-color: #218838;
+        }
+</style>
